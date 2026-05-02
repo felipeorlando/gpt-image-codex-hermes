@@ -1,0 +1,45 @@
+[project]
+name = "gpt-image-codex-hermes"
+version = "0.1.0"
+description = "Hermes-native GPT Image 2 CLI and skill using OpenAI Codex auth instead of OPENAI_API_KEY."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "CC-BY-4.0"
+authors = [
+  { name = "Felipe Orlando" },
+]
+keywords = [
+  "gpt-image-2",
+  "hermes-agent",
+  "openai-codex",
+  "image-generation",
+  "agent-skills",
+  "cli",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+  "openai>=1.55",
+  "pyyaml>=6.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/felipeorlando/gpt-image-codex-hermes"
+Repository = "https://github.com/felipeorlando/gpt-image-codex-hermes"
+Issues = "https://github.com/felipeorlando/gpt-image-codex-hermes/issues"
+
+[project.scripts]
+gpt-image-codex-hermes = "gpt_image_cli.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

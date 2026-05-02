@@ -1,0 +1,16 @@
+{
+  "name": "wuyoscar-skills",
+  "owner": {
+    "name": "wuyoscar",
+    "url": "https://github.com/wuyoscar"
+  },
+  "plugins": [
+    {
+      "name": "gpt-image",
+      "source": "./",
+      "description": "OpenAI GPT Image 2 skill — curated prompt templates across 10+ categories (Chinese typography, research paper figures, games, anime, posters, …). One-shot at --quality high.",
+      "homepage": "https://github.com/wuyoscar/gpt_image_2_skill",
+      "keywords": ["gpt-image-2", "openai", "image-generation", "prompt-library"]
+    }
+  ]
+}
