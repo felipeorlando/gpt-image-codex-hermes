@@ -1,0 +1,62 @@
+name: Sync upstream gallery and references
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: '23 4 * * 1'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Clone upstream repository
+        run: |
+          git clone --depth=1 https://github.com/wuyoscar/gpt_image_2_skill.git /tmp/upstream-gpt-image
+
+      - name: Sync upstream files into Hermes adaptation
+        run: |
+          python scripts/sync_upstream.py \
+            --source /tmp/upstream-gpt-image \
+            --repo-root .
+
+      - name: Re-render Hermes README from synced upstream README snapshot
+        run: |
+          python scripts/render_readme_from_upstream.py \
+            --source README.upstream.md \
+            --output README.md
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/sync-upstream
+          commit-message: 'chore: sync upstream gallery and references'
+          title: 'chore: sync upstream gallery and references'
+          body: |
+            Automated sync from upstream `wuyoscar/gpt_image_2_skill`.
+
+            Preserved Hermes-specific customizations by excluding:
+            - `README.md`
+            - `README.zh.md`
+            - `pyproject.toml`
+            - `src/gpt_image_cli/cli.py`
+            - `skills/gpt-image-codex-hermes/SKILL.md`
+            - `skills/gpt-image-codex-hermes/scripts/generate.py`
+            - `.github/workflows/sync-upstream.yml`
+
+            `README.upstream.md` is refreshed from upstream, then `README.md` is re-rendered locally through `scripts/render_readme_from_upstream.py` so the Hermes intro and unsupported-feature notes stay intact.
+          labels: |
+            automation
+            upstream-sync
+          delete-branch: true

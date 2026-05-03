@@ -1,13 +1,13 @@
-<h1 align="center">GPT Image Codex Hermes · GPT Image 2 Prompt Gallery + Hermes Skill + CLI</h1>
-<p align="center"><em>Hermes-native GPT Image 2 prompt gallery, image prompt library, skill, and CLI — adapted from upstream for OpenAI Codex / ChatGPT OAuth inside Hermes Agent.</em></p>
+<h1 align="center">GPT Image 2 Prompt Gallery + Agentic Skill + CLI</h1>
+<p align="center"><em>OpenAI GPT Image 2 prompt gallery, image prompt library, agentic skill, and CLI — curated, copy-paste prompts and runnable examples for skill-capable agents.</em></p>
 
 <p align="center">
   <a href="README.md"><strong>English</strong></a> · <a href="README.zh.md">中文</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/felipeorlando/gpt-image-codex-hermes/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="CC BY 4.0"/></a>
-  <a href="https://github.com/felipeorlando/gpt-image-codex-hermes/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+  <a href="https://github.com/wuyoscar/gpt_image_2_skill/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="CC BY 4.0"/></a>
+  <a href="https://github.com/wuyoscar/gpt_image_2_skill/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
   <img src="https://img.shields.io/badge/model-gpt--image--2-purple.svg" alt="Model: gpt-image-2"/>
   <img src="https://img.shields.io/badge/python-%E2%89%A53.11-blue.svg" alt="Python ≥ 3.11"/>
 </p>
@@ -17,16 +17,6 @@
 </p>
 
 ---
-
-> **Hermes adaptation notice**
->
-> This repository is the Hermes-native adaptation of [`wuyoscar/gpt_image_2_skill`](https://github.com/wuyoscar/gpt_image_2_skill) for [`felipeorlando/gpt-image-codex-hermes`](https://github.com/felipeorlando/gpt-image-codex-hermes).
->
-> - Uses **Hermes Agent** with native **OpenAI Codex / ChatGPT OAuth** instead of `OPENAI_API_KEY`
-> - Primary local skill path is `skills/gpt-image-codex-hermes`
-> - Primary CLI entry point is `gpt-image-codex-hermes`
-> - **Current Hermes implementation is generation-only**
-> - Sections and showcase items covering edits / inpainting are preserved below as **upstream reference** and are **not yet implemented in this Hermes adaptation**
 
 ## ✨ At a glance
 
@@ -41,7 +31,7 @@
   </tr>
   <tr>
     <td>Surfaces</td>
-    <td><strong>Hermes Skill + CLI + upstream-compatible gallery</strong> — optimized for Hermes Agent, while preserving the upstream prompt/reference corpus and showcase</td>
+    <td><strong>Agentic Skill + CLI</strong> — Claude Code / Codex, OpenClaw, Hermes Agent and other skill-capable agent runtimes</td>
   </tr>
   <tr>
     <td>Last update</td>
@@ -57,7 +47,7 @@
 
 ## 🔎 What this repo is for
 
-Use this repo as a **GPT Image 2 prompt gallery**, **image prompt library**, **Hermes Agent skill**, and **generation CLI**. It preserves the upstream showcase and reusable prompts for research paper figures, posters, UI mockups, game HUDs, anime / manga, photography, typography, maps, tattoo design, and edit-oriented reference workflows, while clearly marking which upstream capabilities are not yet implemented in Hermes.
+Use this repo as a **GPT Image 2 prompt gallery**, **image prompt library**, **example of generation showcase**, **Codex / Claude Code agent skill**, and **gpt-image-2 CLI**. It includes reusable AI image prompts for research paper figures, posters, UI mockups, game HUDs, anime / manga, photography, typography, maps, tattoo design, and reference-image editing workflows.
 
 ---
 
@@ -66,54 +56,62 @@ Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_C
 ## 📥 Install
 
 <details>
-<summary><strong>Hermes Agent</strong></summary>
+<summary><strong>Claude Code</strong></summary>
 
-Make sure Hermes already has Codex auth available:
-
-```bash
-hermes auth list openai-codex
-hermes config set image_gen.provider openai-codex
-hermes config set image_gen.model gpt-image-2-medium
-hermes config set image_gen.openai-codex.model gpt-image-2-medium
+```text
+/plugin marketplace add wuyoscar/gpt_image_2_skill
+/plugin install gpt-image@wuyoscar-skills
 ```
 
-Install the local skill folder into Hermes:
+</details>
 
-```bash
-git clone https://github.com/felipeorlando/gpt-image-codex-hermes.git
-cd gpt-image-codex-hermes
+<details>
+<summary><strong>Codex</strong></summary>
 
-mkdir -p ~/.hermes/skills/creative
-cp -R skills/gpt-image-codex-hermes ~/.hermes/skills/creative/
+Codex ships with built-in skill helpers such as `$skill-installer` and `$skill-creator`.
+Open Codex and ask the built-in installer to install this GitHub skill folder:
+
+```text
+$skill-installer install https://github.com/wuyoscar/gpt_image_2_skill/tree/main/skills/gpt-image
 ```
 
-You can also symlink instead of copying:
+Codex will download the GitHub folder and place it under your Codex skills directory, usually:
 
 ```bash
-ln -s "$PWD/skills/gpt-image-codex-hermes" ~/.hermes/skills/creative/gpt-image-codex-hermes
+~/.codex/skills/gpt-image
 ```
 
-Restart Hermes after installation so the skill is reloaded.
+Restart Codex after installation so the new `$gpt-image` skill is loaded.
+
+If you prefer to install it manually, copy the skill folder into Codex's skills directory:
+
+```bash
+git clone https://github.com/wuyoscar/gpt_image_2_skill.git
+cd gpt_image_2_skill
+
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills"
+cp -R skills/gpt-image "${CODEX_HOME:-$HOME/.codex}/skills/"
+```
 
 </details>
 
 <details>
 <summary><strong>Manual agent-skill install</strong></summary>
 
-Set `AGENT_SKILLS_DIR` to the skills directory used by your runtime, then symlink this repo's Hermes-adapted skill folder into it.
+Set `AGENT_SKILLS_DIR` to the skills directory used by your agent runtime, then symlink this repo's skill folder into it.
 
 ```bash
-git clone https://github.com/felipeorlando/gpt-image-codex-hermes.git
-cd gpt-image-codex-hermes
+git clone https://github.com/wuyoscar/gpt_image_2_skill.git
+cd gpt_image_2_skill
 
 # Choose the skill directory for your runtime.
 # Examples:
-#   Hermes Agent: ~/.hermes/skills/creative
-#   Other runtimes: use that runtime's documented skills directory.
+#   Codex:      ~/.codex/skills
+#   Claude Code / OpenClaw / Hermes Agent / other runtimes: use that runtime's documented skills directory.
 export AGENT_SKILLS_DIR="/path/to/your/agent/skills"
 
 mkdir -p "$AGENT_SKILLS_DIR"
-ln -s "$PWD/skills/gpt-image-codex-hermes" "$AGENT_SKILLS_DIR/gpt-image-codex-hermes"
+ln -s "$PWD/skills/gpt-image" "$AGENT_SKILLS_DIR/gpt-image"
 ```
 
 </details>
@@ -122,17 +120,11 @@ ln -s "$PWD/skills/gpt-image-codex-hermes" "$AGENT_SKILLS_DIR/gpt-image-codex-he
 <summary><strong>CLI</strong></summary>
 
 ```bash
-uvx --from git+https://github.com/felipeorlando/gpt-image-codex-hermes gpt-image-codex-hermes -p "a cat astronaut"
+uvx --from git+https://github.com/wuyoscar/gpt_image_2_skill gpt-image -p "a cat astronaut"
 
 # or install to PATH
-uv tool install git+https://github.com/felipeorlando/gpt-image-codex-hermes
-gpt-image-codex-hermes -p "a cat astronaut"
-```
-
-Repo-local script entry point also works:
-
-```bash
-uv run skills/gpt-image-codex-hermes/scripts/generate.py -p "a cat astronaut"
+uv tool install git+https://github.com/wuyoscar/gpt_image_2_skill
+gpt-image -p "a cat astronaut"
 ```
 
 </details>
@@ -141,17 +133,18 @@ uv run skills/gpt-image-codex-hermes/scripts/generate.py -p "a cat astronaut"
 <summary><strong>Update</strong></summary>
 
 ```bash
-cd gpt-image-codex-hermes && git pull
+# plugin: use Claude Code's update flow
+# codex skill: rerun the installer
+# manual git clone
+cd gpt_image_2_skill && git pull
 
-# if installed as a uv tool
-uv tool upgrade gpt-image-codex-hermes
+# CLI
+uv tool upgrade gpt-image-cli
 ```
-
-This fork also ships a GitHub Action that can open PRs with upstream gallery/reference sync updates without overwriting Hermes-specific files.
 
 </details>
 
-Uses **Hermes Codex / ChatGPT OAuth auth state**. No `OPENAI_API_KEY` is required for the supported generation workflow.
+Reads `OPENAI_API_KEY` from the environment or `~/.env`.
 
 ---
 
@@ -160,22 +153,17 @@ Uses **Hermes Codex / ChatGPT OAuth auth state**. No `OPENAI_API_KEY` is require
 <details>
 <summary><strong>CLI quick usage</strong></summary>
 
-After install, every gallery entry below can be copy-pasted as `gpt-image-codex-hermes -p "…"` for generation or requested from Hermes Agent in natural language, e.g. *"generate the Boston Spring poster from the skill gallery"*.
+After install, every gallery entry below can be copy-pasted as `gpt-image -p "…"` or requested from any skill-capable agent runtime in natural language, e.g. *"generate the Boston Spring poster from the skill gallery"*.
 
 ### Text → image
 
 ```bash
-gpt-image-codex-hermes -p "a photorealistic convenience store at 10pm" --size 1k --quality high -f store.png
+gpt-image -p "a photorealistic convenience store at 10pm" --size 1k --quality high -f store.png
 ```
 
-Under the hood in this adaptation: Hermes reuses your local `openai-codex` / ChatGPT OAuth session and routes generation through the Codex Responses API `image_generation` tool path using `gpt-image-2`.
+Under the hood: `POST /v1/images/generations` with `model=gpt-image-2`.
 
 ### Text + reference image → image (edit)
-
-> **Upstream reference — not yet supported in this Hermes adaptation.**
->
-> The original upstream project supports edit-style workflows through direct OpenAI image edit endpoints. This Hermes adaptation currently rejects `-i/--image` and `-m/--mask` and only supports text-to-image generation. The examples below are preserved so you can track upstream behavior and future parity targets.
-
 
 ```bash
 # Single-reference edit / restyle
@@ -202,9 +190,9 @@ Under the hood: `POST /v1/images/edits` (multipart form), the official endpoint 
 |---|---|---|---|---|
 | `-p, --prompt` | str | — required | both | Full prompt text. |
 | `-f, --file` | path | `./fig/YYYY-MM-DD-HH-MM-SS-<slug>.png` | both | Explicit output path. |
-| `-i, --image` | path (repeatable) | — | edits | Upstream reference only. The current Hermes adaptation rejects this flag. |
-| `-m, --mask` | path (PNG, alpha) | — | edits | Upstream reference only. The current Hermes adaptation rejects this flag. |
-| `--input-fidelity` | `low` · `high` | — | edits | Upstream reference only. Supported on `gpt-image-1`/`1.5`; not part of the current Hermes generation-only adaptation. |
+| `-i, --image` | path (repeatable) | — | edits | Presence routes through `/v1/images/edits`. |
+| `-m, --mask` | path (PNG, alpha) | — | edits | Opaque = preserved, transparent = regenerated. Requires `-i`. |
+| `--input-fidelity` | `low` · `high` | — | edits | Supported on `gpt-image-1`/`1.5`. `gpt-image-2` rejects this parameter, so the CLI drops it locally. |
 | `--size` | `1k` · `2k` · `4k` · `portrait` · `landscape` · `square` · `wide` · `tall` · literal `1024x1024` etc. | `1024x1024` | both | Literals must be 16-px multiples, max edge 3840, 3:1 cap, 655k–8.3M total pixels. |
 | `--quality` | `auto` · `low` · `medium` · `high` | `high` | both | This is the practical budget dial: `low` for cheap drafts / large sweeps, `medium` for normal exploration, `high` for final text-heavy or shipping-facing assets. |
 | `-n, --n` | int | 1 | both | Batch generation. `n>1` suffixes filenames `_0`, `_1`, … |
@@ -227,11 +215,11 @@ If you are generating dozens of candidates, start at `low` and only rerun finali
 
 ### From gallery prompt → CLI / SDK
 
-Every entry below ships **just the prompt plus a metadata line** (`"size"` · `"quality"` · source). Assemble the Hermes CLI / SDK call the same way every time — worked once here so per-entry code blocks can stay out of your way. Example for a `"portrait"` · `"high"` entry:
+Every entry below ships **just the prompt plus a metadata line** (`"size"` · `"quality"` · source). Assemble the CLI / SDK call the same way every time — worked once here so per-entry code blocks can stay out of your way. Example for a `"portrait"` · `"high"` entry:
 
 ```bash
 # CLI
-gpt-image-codex-hermes -p "<PROMPT FROM ENTRY>" --size portrait --quality high -f out.png
+gpt-image -p "<PROMPT FROM ENTRY>" --size portrait --quality high -f out.png
 ```
 
 ```python
@@ -246,9 +234,9 @@ result = client.images.generate(
 )
 ```
 
-For this Hermes adaptation today, stay on the generate path shown above. Reference-based edits remain an upstream capability and future-parity target rather than a supported local feature.
+For reference-based edits, add `-i ref.png` (repeatable) and optionally `-m mask.png` on the CLI, or call `client.images.edit(...)` with `image=[open(p, "rb") for p in refs]`. Everything else stays identical to the generate path.
 
-Exit codes in this Hermes adaptation: `0` success · `1` request/runtime/auth error · `2` bad args or use of unsupported edit/inpaint flags.
+Exit codes: `0` success · `1` API/refusal error (full response body echoed to stderr) · `2` bad args or missing `OPENAI_API_KEY`.
 
 </details>
 
@@ -257,7 +245,7 @@ Exit codes in this Hermes adaptation: `0` success · `1` request/runtime/auth er
 <details>
 <summary><strong>Show prompting notes</strong></summary>
 
-Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/openai/openai-cookbook/blob/main/examples/multimodal/image-gen-models-prompting-guide.ipynb) (also archived locally at [`skills/gpt-image-codex-hermes/references/openai-cookbook.md`](skills/gpt-image-codex-hermes/references/openai-cookbook.md) — loaded on demand by the skill when you ask about parameter semantics, edits, UI mockups, pitch-deck slides, scientific visuals, virtual try-on, billboard mockups, or translation edits):
+Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/openai/openai-cookbook/blob/main/examples/multimodal/image-gen-models-prompting-guide.ipynb) (also archived locally at [`skills/gpt-image/references/openai-cookbook.md`](skills/gpt-image/references/openai-cookbook.md) — loaded on demand by the skill when you ask about parameter semantics, edits, UI mockups, pitch-deck slides, scientific visuals, virtual try-on, billboard mockups, or translation edits):
 
 1. **Structure, then goal.** Use a consistent order: `background/scene → subject → key details → constraints`, and **state the intended use** (ad, UI mock, infographic) so the model picks the right mode and polish level.
 2. **Any format works; consistency matters more.** Minimal prompts, descriptive paragraphs, JSON-style structures, instruction-style prompts, and tag-based prompts all work. For production, prefer a skimmable template over clever syntax.
@@ -268,10 +256,10 @@ Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/
 7. **Use `quality="high"` for in-image text, dense diagrams, small labels, and multi-panel layouts.** Those cases degrade visibly at `medium`.
 
 **The skill ships four local reference surfaces:**
-- [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) — lightweight routing index for the split 162-prompt Scale Atlas. It should be read first to pick a category; it does **not** contain the full prompt dump.
-- `skills/gpt-image-codex-hermes/references/gallery-*.md` — one category per file, loaded only when relevant, e.g. [`gallery-product-and-food.md`](skills/gpt-image-codex-hermes/references/gallery-product-and-food.md), [`gallery-ui-ux-mockups.md`](skills/gpt-image-codex-hermes/references/gallery-ui-ux-mockups.md), [`gallery-research-paper-figures.md`](skills/gpt-image-codex-hermes/references/gallery-research-paper-figures.md). This keeps the Scale useful without overflowing context.
-- [`skills/gpt-image-codex-hermes/references/craft.md`](skills/gpt-image-codex-hermes/references/craft.md) — expanded 19-section prompt-craft checklist covering Scale-first usage, JSON/config-style prompts, multi-panel boards, UI specs, data/diagram grammar, edit invariants, reference workflows, dense text, and category mini-schemas.
-- [`skills/gpt-image-codex-hermes/references/openai-cookbook.md`](skills/gpt-image-codex-hermes/references/openai-cookbook.md) — verbatim Markdown capture of OpenAI's cookbook (1004 lines), including the authoritative parameter-coverage table and every §4 / §5 use-case example.
+- [`skills/gpt-image/references/gallery.md`](skills/gpt-image/references/gallery.md) — lightweight routing index for the split 162-prompt Scale Atlas. It should be read first to pick a category; it does **not** contain the full prompt dump.
+- `skills/gpt-image/references/gallery-*.md` — one category per file, loaded only when relevant, e.g. [`gallery-product-and-food.md`](skills/gpt-image/references/gallery-product-and-food.md), [`gallery-ui-ux-mockups.md`](skills/gpt-image/references/gallery-ui-ux-mockups.md), [`gallery-research-paper-figures.md`](skills/gpt-image/references/gallery-research-paper-figures.md). This keeps the Scale useful without overflowing context.
+- [`skills/gpt-image/references/craft.md`](skills/gpt-image/references/craft.md) — expanded 19-section prompt-craft checklist covering Scale-first usage, JSON/config-style prompts, multi-panel boards, UI specs, data/diagram grammar, edit invariants, reference workflows, dense text, and category mini-schemas.
+- [`skills/gpt-image/references/openai-cookbook.md`](skills/gpt-image/references/openai-cookbook.md) — verbatim Markdown capture of OpenAI's cookbook (1004 lines), including the authoritative parameter-coverage table and every §4 / §5 use-case example.
 
 </details>
 
@@ -281,63 +269,63 @@ Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/
 
 ## 🎨 Prompt Showcase
 
-> **About the prompts.** This README showcases a representative selection of prompts together with their generated images. The larger Reference Gallery contains all 162 prompts and 162 image assets, organized by category in [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) and the matching `skills/gpt-image-codex-hermes/references/gallery-*.md` files.
+> **About the prompts.** This README showcases a representative selection of prompts together with their generated images. The larger Reference Gallery contains all 162 prompts and 162 image assets, organized by category in [`skills/gpt-image/references/gallery.md`](skills/gpt-image/references/gallery.md) and the matching `skills/gpt-image/references/gallery-*.md` files.
 >
 > **Source labels.** `Curated` means a repo-curated or substantially reworked prompt/image; outside-source items keep visible author/source links.
 
 <table>
   <tr>
-    <td align="center" valign="top">🎌<br/><strong><a href="#gallery-anime-manga">Anime & Manga</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-anime-and-manga.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🎮<br/><strong><a href="#gallery-gaming">Gaming</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-gaming.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🤖<br/><strong><a href="#gallery-retro-cyberpunk">Retro & Cyberpunk</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-retro-and-cyberpunk.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎌<br/><strong><a href="#gallery-anime-manga">Anime & Manga</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-anime-and-manga.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎮<br/><strong><a href="#gallery-gaming">Gaming</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-gaming.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🤖<br/><strong><a href="#gallery-retro-cyberpunk">Retro & Cyberpunk</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-retro-and-cyberpunk.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🎬<br/><strong><a href="#gallery-cinematic-animation">Cinematic & Animation</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-cinematic-and-animation.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">👤<br/><strong><a href="#gallery-character-design">Character Design</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-character-design.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📝<br/><strong><a href="#gallery-typography-posters">Typography & Posters</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-typography-and-posters.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎬<br/><strong><a href="#gallery-cinematic-animation">Cinematic & Animation</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-cinematic-and-animation.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">👤<br/><strong><a href="#gallery-character-design">Character Design</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-character-design.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📝<br/><strong><a href="#gallery-typography-posters">Typography & Posters</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-typography-and-posters.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🎨<br/><strong><a href="#gallery-illustration">Illustration</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-illustration.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">💧<br/><strong><a href="#gallery-watercolor">Watercolor</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-watercolor.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🖌️<br/><strong><a href="#gallery-ink-chinese">Ink & Chinese</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-ink-and-chinese.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎨<br/><strong><a href="#gallery-illustration">Illustration</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-illustration.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">💧<br/><strong><a href="#gallery-watercolor">Watercolor</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-watercolor.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🖌️<br/><strong><a href="#gallery-ink-chinese">Ink & Chinese</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-ink-and-chinese.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🕹️<br/><strong><a href="#gallery-pixel-art">Pixel Art</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-pixel-art.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📐<br/><strong><a href="#gallery-isometric">Isometric</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-isometric.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📦<br/><strong><a href="#gallery-product-food">Product & Food</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-product-and-food.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🕹️<br/><strong><a href="#gallery-pixel-art">Pixel Art</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-pixel-art.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📐<br/><strong><a href="#gallery-isometric">Isometric</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-isometric.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📦<br/><strong><a href="#gallery-product-food">Product & Food</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-product-and-food.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🧩<br/><strong><a href="#gallery-brand-systems-identity">Brand Systems & Identity</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-brand-systems-and-identity.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📷<br/><strong><a href="#gallery-photography">Photography</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-photography.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🖥️<br/><strong><a href="#gallery-screen-photography">Screen Photography</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-screen-photography.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🧩<br/><strong><a href="#gallery-brand-systems-identity">Brand Systems & Identity</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-brand-systems-and-identity.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📷<br/><strong><a href="#gallery-photography">Photography</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-photography.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🖥️<br/><strong><a href="#gallery-screen-photography">Screen Photography</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-screen-photography.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">📊<br/><strong><a href="#gallery-infographics-field-guides">Infographics & Field Guides</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-infographics-and-field-guides.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📚<br/><strong><a href="#gallery-research-paper-figures">Research Paper Figures</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-research-paper-figures.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🏢<br/><strong><a href="#gallery-official-openai-cookbook">Official OpenAI Cookbook Examples</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-official-openai-cookbook-examples.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📊<br/><strong><a href="#gallery-infographics-field-guides">Infographics & Field Guides</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-infographics-and-field-guides.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📚<br/><strong><a href="#gallery-research-paper-figures">Research Paper Figures</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-research-paper-figures.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🏢<br/><strong><a href="#gallery-official-openai-cookbook">Official OpenAI Cookbook Examples</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-official-openai-cookbook-examples.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">✨<br/><strong><a href="#gallery-edit-endpoint-showcase">Edit Endpoint Showcase</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-edit-endpoint-showcase.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📱<br/><strong><a href="#gallery-uiux-mockups">UI/UX Mockups</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-ui-ux-mockups.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">📊<br/><strong><a href="#gallery-data-visualization">Data Visualization</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-data-visualization.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">✨<br/><strong><a href="#gallery-edit-endpoint-showcase">Edit Endpoint Showcase</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-edit-endpoint-showcase.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📱<br/><strong><a href="#gallery-uiux-mockups">UI/UX Mockups</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-ui-ux-mockups.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">📊<br/><strong><a href="#gallery-data-visualization">Data Visualization</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-data-visualization.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">⚙️<br/><strong><a href="#gallery-technical-illustration">Technical Illustration</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-technical-illustration.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🏛️<br/><strong><a href="#gallery-architecture-interior">Architecture & Interior</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-architecture-and-interior.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🔬<br/><strong><a href="#gallery-scientific-educational">Scientific & Educational</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-scientific-and-educational.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">⚙️<br/><strong><a href="#gallery-technical-illustration">Technical Illustration</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-technical-illustration.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🏛️<br/><strong><a href="#gallery-architecture-interior">Architecture & Interior</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-architecture-and-interior.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🔬<br/><strong><a href="#gallery-scientific-educational">Scientific & Educational</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-scientific-and-educational.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">👗<br/><strong><a href="#gallery-fashion-editorial">Fashion Editorial</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-fashion-editorial.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🎨<br/><strong><a href="#gallery-fine-art-painting">Fine Art Painting</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-fine-art-painting.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">✏️<br/><strong><a href="#gallery-more-illustration-styles">More Illustration Styles</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-more-illustration-styles.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">👗<br/><strong><a href="#gallery-fashion-editorial">Fashion Editorial</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-fashion-editorial.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎨<br/><strong><a href="#gallery-fine-art-painting">Fine Art Painting</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-fine-art-painting.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">✏️<br/><strong><a href="#gallery-more-illustration-styles">More Illustration Styles</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-more-illustration-styles.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🎥<br/><strong><a href="#gallery-cinematic-film-references">Cinematic Film References</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-cinematic-film-references.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">💄<br/><strong><a href="#gallery-beauty-lifestyle">Beauty & Lifestyle</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-beauty-and-lifestyle.md"><kbd>Full Gallery MD</kbd></a></sub></td>
-    <td align="center" valign="top">🎟️<br/><strong><a href="#gallery-events-experience">Events & Experience</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-events-and-experience.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎥<br/><strong><a href="#gallery-cinematic-film-references">Cinematic Film References</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-cinematic-film-references.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">💄<br/><strong><a href="#gallery-beauty-lifestyle">Beauty & Lifestyle</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-beauty-and-lifestyle.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🎟️<br/><strong><a href="#gallery-events-experience">Events & Experience</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-events-and-experience.md"><kbd>Full Gallery MD</kbd></a></sub></td>
   </tr>
   <tr>
-    <td align="center" valign="top">🖋️<br/><strong><a href="#gallery-tattoo-design">Tattoo Design</a></strong><br/><sub><a href="skills/gpt-image-codex-hermes/references/gallery-tattoo-design.md"><kbd>Full Gallery MD</kbd></a></sub></td>
+    <td align="center" valign="top">🖋️<br/><strong><a href="#gallery-tattoo-design">Tattoo Design</a></strong><br/><sub><a href="skills/gpt-image/references/gallery-tattoo-design.md"><kbd>Full Gallery MD</kbd></a></sub></td>
     <td align="center" valign="top"></td>
     <td align="center" valign="top"></td>
   </tr>
@@ -1878,9 +1866,6 @@ Panel 4: The door opens. The pet is seated perfectly by the entrance, alert and 
 <a id="gallery-edit-endpoint-showcase"></a>
 
 <h2 align="center">✨ Edit Endpoint Showcase</h2>
-
-> **Upstream reference only.** These examples showcase the original upstream edit workflow. The current Hermes adaptation does **not** implement reference-image edits, mask-based inpainting, or multi-image compositing yet.
-
 
 <p align="right"><sub><a href="#gallery-index"><kbd>↑ Gallery index</kbd></a></sub></p>
 
