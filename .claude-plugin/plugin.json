@@ -1,6 +1,6 @@
 {
   "name": "gpt-image",
-  "description": "OpenAI GPT Image 2 prompt gallery, image prompt library, agentic skill + CLI. Curated text-to-image prompts, reference-image editing workflows, and split gallery atlas for skill-capable agent runtimes.",
+  "description": "OpenAI GPT Image 2 prompt gallery, image prompt library, agentic skill + CLI. Gallery-first prompt patterns, reference-image editing workflows, and a packaged CLI for skill-capable agent runtimes.",
   "version": "0.2.0",
   "author": {
     "name": "wuyoscar",
@@ -8,7 +8,7 @@
   },
   "homepage": "https://github.com/wuyoscar/gpt_image_2_skill",
   "repository": "https://github.com/wuyoscar/gpt_image_2_skill",
-  "license": "CC-BY-4.0",
+  "license": "MIT",
   "keywords": [
     "gpt-image-2",
     "gpt-image",

@@ -6,10 +6,16 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/felipeorlando/gpt-image-codex-hermes/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg" alt="CC BY 4.0"/></a>
+  <a href="https://github.com/felipeorlando/gpt-image-codex-hermes/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"/></a>
   <a href="https://github.com/felipeorlando/gpt-image-codex-hermes/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
   <img src="https://img.shields.io/badge/model-gpt--image--2-purple.svg" alt="Model: gpt-image-2"/>
   <img src="https://img.shields.io/badge/python-%E2%89%A53.11-blue.svg" alt="Python ≥ 3.11"/>
+</p>
+
+<p align="center">
+  <a href="https://oosmetrics.com/repo/wuyoscar/gpt_image_2_skill"><img src="https://img.shields.io/static/v1?label=oosmetrics&message=Top%201%20Agents&color=8AA399" alt="oosmetrics Top 1 in Agents by velocity"/></a>
+  <a href="https://oosmetrics.com/repo/wuyoscar/gpt_image_2_skill"><img src="https://img.shields.io/static/v1?label=oosmetrics&message=Top%201%20LLMs&color=8798B5" alt="oosmetrics Top 1 in LLMs by velocity"/></a>
+  <a href="https://oosmetrics.com/repo/wuyoscar/gpt_image_2_skill"><img src="https://img.shields.io/static/v1?label=oosmetrics&message=Top%201%20CLI&color=A58B9D" alt="oosmetrics Top 1 in CLI by velocity"/></a>
 </p>
 
 <p align="center">
@@ -37,7 +43,7 @@
   </tr>
   <tr>
     <td>Gallery size</td>
-    <td><strong>162 prompts / 162 image assets</strong> · README shows a selected showcase</td>
+    <td><strong>Small but mighty</strong> · curated for signal, not volume; README shows a selected showcase</td>
   </tr>
   <tr>
     <td>Surfaces</td>
@@ -45,7 +51,7 @@
   </tr>
   <tr>
     <td>Last update</td>
-    <td><strong>2026-04-25</strong></td>
+    <td><strong>2026-05-05</strong></td>
   </tr>
   <tr>
     <td>Docs</td>
@@ -58,6 +64,11 @@
 ## 🔎 What this repo is for
 
 Use this repo as a **GPT Image 2 prompt gallery**, **image prompt library**, **Hermes Agent skill**, and **generation CLI**. It preserves the upstream showcase and reusable prompts for research paper figures, posters, UI mockups, game HUDs, anime / manga, photography, typography, maps, tattoo design, and edit-oriented reference workflows, while clearly marking which upstream capabilities are not yet implemented in Hermes.
+
+> This project is not trying to collect every prompt on the internet. We keep a selected set of examples that show what GPT Image 2 can do and how to use it well. Thanks for all the love this little gallery has received 🫶 — if time allows, I will also share the automated patch/update workflow behind it later.
+
+> [!CAUTION]
+> For research figures, treat generated images as references, workflow sketches, or reproducible style targets. We do **not** recommend dropping GPT Image 2 outputs directly into a paper as-is; for academic communication, that can be misleading and is generally bad practice.
 
 ---
 
@@ -268,9 +279,9 @@ Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/
 7. **Use `quality="high"` for in-image text, dense diagrams, small labels, and multi-panel layouts.** Those cases degrade visibly at `medium`.
 
 **The skill ships four local reference surfaces:**
-- [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) — lightweight routing index for the split 162-prompt Scale Atlas. It should be read first to pick a category; it does **not** contain the full prompt dump.
-- `skills/gpt-image-codex-hermes/references/gallery-*.md` — one category per file, loaded only when relevant, e.g. [`gallery-product-and-food.md`](skills/gpt-image-codex-hermes/references/gallery-product-and-food.md), [`gallery-ui-ux-mockups.md`](skills/gpt-image-codex-hermes/references/gallery-ui-ux-mockups.md), [`gallery-research-paper-figures.md`](skills/gpt-image-codex-hermes/references/gallery-research-paper-figures.md). This keeps the Scale useful without overflowing context.
-- [`skills/gpt-image-codex-hermes/references/craft.md`](skills/gpt-image-codex-hermes/references/craft.md) — expanded 19-section prompt-craft checklist covering Scale-first usage, JSON/config-style prompts, multi-panel boards, UI specs, data/diagram grammar, edit invariants, reference workflows, dense text, and category mini-schemas.
+- [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) — lightweight routing index for the split Reference Gallery Atlas. It should be read first to pick a category; it does **not** contain the full prompt dump.
+- `skills/gpt-image-codex-hermes/references/gallery-*.md` — one category per file, loaded only when relevant, e.g. [`gallery-product-and-food.md`](skills/gpt-image-codex-hermes/references/gallery-product-and-food.md), [`gallery-ui-ux-mockups.md`](skills/gpt-image-codex-hermes/references/gallery-ui-ux-mockups.md), [`gallery-research-paper-figures.md`](skills/gpt-image-codex-hermes/references/gallery-research-paper-figures.md). This keeps the skill useful without overflowing context.
+- [`skills/gpt-image-codex-hermes/references/craft.md`](skills/gpt-image-codex-hermes/references/craft.md) — expanded 19-section prompt-craft checklist covering gallery-first usage, JSON/config-style prompts, multi-panel boards, UI specs, data/diagram grammar, edit invariants, reference workflows, dense text, and category mini-schemas.
 - [`skills/gpt-image-codex-hermes/references/openai-cookbook.md`](skills/gpt-image-codex-hermes/references/openai-cookbook.md) — verbatim Markdown capture of OpenAI's cookbook (1004 lines), including the authoritative parameter-coverage table and every §4 / §5 use-case example.
 
 </details>
@@ -281,7 +292,7 @@ Distilled from OpenAI's [official GPT Image prompting guide](https://github.com/
 
 ## 🎨 Prompt Showcase
 
-> **About the prompts.** This README showcases a representative selection of prompts together with their generated images. The larger Reference Gallery contains all 162 prompts and 162 image assets, organized by category in [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) and the matching `skills/gpt-image-codex-hermes/references/gallery-*.md` files.
+> **About the prompts.** This README showcases a representative selection of prompts together with their generated images. The larger Reference Gallery contains the full curated prompt/image atlas, organized by category in [`skills/gpt-image-codex-hermes/references/gallery.md`](skills/gpt-image-codex-hermes/references/gallery.md) and the matching `skills/gpt-image-codex-hermes/references/gallery-*.md` files.
 >
 > **Source labels.** `Curated` means a repo-curated or substantially reworked prompt/image; outside-source items keep visible author/source links.
 
@@ -1575,8 +1586,8 @@ Make me an image in 35 mm film style of a diagram showing the knowledge of camer
       <sub><strong>O · Frontier Safety Eval Loop</strong><br/><code>"landscape"</code> · <code>"high"</code> · <code>"Curated"</code></sub>
     </td>
     <td width="25%" align="center" valign="top">
-      <a href="docs/research-paper-figures/hmr-iclr-figure.png"><img src="docs/research-paper-figures/hmr-iclr-figure.png" width="100%" alt="ICLR-style method figure"/></a><br/>
-      <sub><strong>P · ICLR-style method figure</strong><br/><code>"landscape"</code> · <code>"high"</code> · <a href="https://www.xiaohongshu.com/explore/69d396140000000023012282"><code>"Xiaohongshu"</code></a></sub>
+      <a href="docs/research-paper-figures/llm-persona-atlas.png"><img src="docs/research-paper-figures/llm-persona-atlas.png" width="100%" alt="LLM Persona Atlas"/></a><br/>
+      <sub><strong>P · LLM Persona Atlas</strong><br/><code>"wide"</code> · <code>"high"</code> · <code>"Curated"</code></sub>
     </td>
   </tr>
 </table>
@@ -1805,9 +1816,15 @@ Title: "ReAct trace: interleaved reasoning and tool-use on a factual-QA task". S
 Create a beautiful research flowchart for an AI safety benchmark pipeline called Frontier Safety Eval Loop. Landscape figure, white background, large typography, vector-like shapes, soft indigo, coral, sage, and graphite palette. Show stages Prompt Suite, Model Runs, Judge Models, Human Audit, Failure Taxonomy, Patch Queue, and Re-run. Use clean swimlanes, numbered callouts, compact legends, and premium paper-ready styling. High detail, excellent color harmony, generous whitespace, no clutter, conference-quality diagram.
 ```
 
-**Prompt P — ICLR-style method figure**
+**Prompt P — LLM Persona Atlas**
 ```text
-Create a polished ICLR-style Figure 1 for an imaginary method called "Hierarchical Memory Routing for Long-Context Multimodal Reasoning (HMR)". The top band shows the failure mode of naive long-context multimodal processing: one overcrowded horizontal token stream mixing text, image patches, retrieved documents, tool traces, and audio snippets, with red-orange warning accents for interference, attention dilution, memory collision, and quadratic compute cost. A clean horizontal divider separates the main lower panel, which presents the HMR framework as a spacious modular loop. Center: a Reasoning Controller with stages Observe_t to Update_t. Left: a three-level Memory Hierarchy with working cache, episodic memory, and semantic knowledge base. Right: Multimodal Streams entering selectively through routing paths. Bottom right: sparse experts activated only when needed. White background, vector-clean styling, neutral gray plus cool accents, minimal but legible labels, conference-paper clarity, no poster aesthetics.
+Create a premium conceptual figure for an EMNLP / ACL paper, landscape 16:9, high-resolution, polished editorial-academic style. Theme: "LLM Persona Atlas". This should not look like a generic pipeline diagram. It should look like a beautifully designed Figure 1 from a top NLP / agent paper: minimal, refined, memorable, with a strong central visual metaphor.
+
+Use a warm off-white paper background, subtle grain, large clean margins, crisp vector-like linework, delicate shadows, and fine gradients used sparingly. Use an understated, high-end color palette: ink black, warm gray, muted cobalt, dusty teal, soft sage, pale amber, muted coral, slate blue. No saturated rainbow colors, no cartoon style, no photorealism, no generic stock illustration.
+
+Composition: left "Utterance Stream" with small translucent speech fragments flowing in as curved data ribbons; center "Persona Lens" as a glass-like hexagonal prism / agent lens that refracts utterance ribbons into six colored persona strands; right "Six Persona Glyphs" as a coherent 2x3 gallery of abstract symbolic avatars labeled "Concise", "Explainer", "Cautious", "Supportive", "Creative", and "Analyst".
+
+Keep typography sparse, crisp, and clean. Add a small title "LLM Persona Atlas" and subtitle "from utterance style to model profile". Avoid dense method labels, big boxes, fake equations, fake citations, garbled text, photoreal humans, childish cartoon avatars, heavy shadows, and purple gradient backgrounds.
 ```
 
 </details>
@@ -2791,4 +2808,4 @@ Community standards:
 
 ## 📄 License
 
-This project is released under [CC BY 4.0](LICENSE). Please preserve attribution for outside-source prompts and respect the original authors linked in each gallery entry.
+This project is released under the [MIT License](LICENSE). Please still preserve attribution for outside-source prompts and respect the original authors linked in each gallery entry.

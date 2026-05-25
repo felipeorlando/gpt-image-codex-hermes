@@ -1,8 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Clarified the GPT Image skill as a gallery-first, CLI-first agent runbook: analyze user prompts, search Reference Gallery/craft files, confer when useful, then invoke the packaged CLI.
+- Added safer install and API-key guidance: check existing CLI/skill state first, avoid blind reinstall/overwrite, keep global/shared installs opt-in, and never write secrets unless explicitly requested.
+- Updated cross-agent installation wording for Codex, OpenClaw, Claude Code, and manual skill runtimes.
+
 ## v0.2.0 — 2026-04-25
 
-This release collects the recent documentation, gallery, skill-scale, and discoverability updates after the initial public release.
+This release collects the recent documentation, gallery, skill, and discoverability updates after the initial public release.
 
 ### Highlights
 
@@ -15,7 +21,7 @@ This release collects the recent documentation, gallery, skill-scale, and discov
 
 ### Merged PRs
 
-- #1 — Sync the full prompt gallery into the skill scale
+- #1 — Sync the full prompt gallery into the skill reference atlas
 - #3 — Polish README showcase and sync split gallery atlas
 - #4 — Add README language switch
 - #5 — Clarify Codex skill installation
