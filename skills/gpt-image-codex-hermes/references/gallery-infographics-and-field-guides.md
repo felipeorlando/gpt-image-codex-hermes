@@ -1,10 +1,10 @@
 # 📊 Infographics & Field Guides
 
-Range: No. 67–74 · Count: 8
+Range: No. 68–75, 167, 169 · Count: 10
 
 Load this file only when the request matches this category. For cross-cutting writing rules, pair it with `craft.md`.
 
-### No. 67 · Song Dynasty social-media feed
+### No. 68 · Song Dynasty social-media feed
 
 - Image: `docs/infographics-field-guides/song-dynasty-feed.png`
 
@@ -15,7 +15,7 @@ Load this file only when the request matches this category. For cross-cutting wr
 "Song Dynasty People's Moments"/"SONG DYNASTY SOCIAL MEDIA FEED", Ancient and modern time-travel humor fusion interface design style, The image simulates a mobile phone social media interface, but the content is entirely Song Dynasty scenes, The avatar is a portrait of a Song Dynasty literati, Username "Su Dongpo SuShi_Official", Post content "Just arrived in Huangzhou, demoted but feeling okay. Made Dongpo pork myself today, tastes amazing, recipe attached:", The attached image is a close-up of Dongpo pork in Gongbi painting style, Likes list "Huang Tingjian, Qin Guan, Fo Yin etc. 126 people", Comments section "Wang Anshi: Hehe" "Sima Guang: Still the same taste", Interface elements such as the like icon are replaced with Song Dynasty patterns, The status bar shows "Great Song Mobile 5G" and "Third Year of Yuanfeng", The color scheme is mobile phone dark mode paired with elegant Song Dynasty tones, A masterpiece of fun collision between history and social media
 ```
 
-### No. 68 · Museum catalog disassembly infographic (唐代襦裙)
+### No. 69 · Museum catalog disassembly infographic (唐代襦裙)
 
 - Image: `docs/infographics-field-guides/museum-infographic.png`
 
@@ -41,7 +41,7 @@ If the subject is suitable for character display, use a full-body standing postu
 Avoid: poster feel, studio portrait feel, e-commerce feel, anime feel, cosplay feel, random annotations, incorrect structures, blurry text, fake materials, excessive decoration.
 ```
 
-### No. 69 · Encyclopedia field guide (Giant Panda)
+### No. 70 · Encyclopedia field guide (Giant Panda)
 
 - Image: `docs/infographics-field-guides/encyclopedia-panda.png`
 
@@ -68,7 +68,7 @@ Visual requirements: use a clean light background, soft colors, subtle shadows, 
 Do not make it look like a commercial promo poster. Emphasize knowledge organization, modular information, and a field-guide presentation.
 ```
 
-### No. 70 · Weekend Seoul travel guide poster
+### No. 71 · Weekend Seoul travel guide poster
 
 - Image: `docs/infographics-field-guides/seoul-travel-guide.png`
 
@@ -79,7 +79,7 @@ Do not make it look like a commercial promo poster. Emphasize knowledge organiza
 Generate a polished one-page Chinese travel guide poster for a fast weekend trip from Nanjing to Seoul in May. Use LARGE highly legible Chinese text, short phrases only, and no paragraph blocks. Focus on shopping, skincare, and a stylish Seongsu-dong route. Layout: big title, 4 modules only (行程 / 区域推荐 / 购物清单 / 美妆护肤), each with 2 to 4 short bullet points, plus a small cute route map with icons. Clean editorial infographic style, soft pastel colors, neat spacing, high readability, modern Xiaohongshu travel card aesthetic. Avoid tiny text, avoid dense explanations, avoid garbled characters.
 ```
 
-### No. 71 · Modular encyclopedia infographic card
+### No. 72 · Modular encyclopedia infographic card
 
 - Image: `docs/infographics-field-guides/snow-leopard-encyclopedia-card.png`
 
@@ -90,7 +90,7 @@ Generate a polished one-page Chinese travel guide poster for a fast weekend trip
 Generate a high-quality vertical science encyclopedia card about "雪豹 Snow Leopard". It should feel like a collectible modular knowledge infographic rather than a normal poster. Include one beautiful hero illustration, several zoomed-in detail callouts, rounded information modules, clear title hierarchy, compact encyclopedia content, rating cards, and a Top 5 facts module. Suggested sections: basic profile, habitat, appearance, hunting behavior, conservation risks, climate adaptation, suitable environment, and quick scorecard. Visual style: clean light background, soft palette, subtle shadows, refined icons, rounded info boxes, dense but readable information, polished editorial layout, high collection value.
 ```
 
-### No. 72 · Xiaohongshu cooking tutorial card
+### No. 73 · Xiaohongshu cooking tutorial card
 
 - Image: `docs/infographics-field-guides/cooking-tutorial-card.png`
 
@@ -101,7 +101,7 @@ Generate a high-quality vertical science encyclopedia card about "雪豹 Snow Le
 Create a Xiaohongshu-style viral cooking tutorial image in a 3:4 vertical layout for homemade scallion oil noodles. Cozy home-cooking vibe, warm inviting lifestyle aesthetic, 4 to 6 step grid layout, clean spacing, realistic food photography, soft natural lighting, slight film tone, warm color grading, visible oil sheen, steam, sauce texture, and hands interacting with the food. Add small Chinese annotations such as 切葱, 熬油, 拌面, 出锅. Avoid overcrowding or excessive text.
 ```
 
-### No. 73 · Camera styles reference board for iPhone photographers
+### No. 74 · Camera styles reference board for iPhone photographers
 
 - Image: `docs/infographics-field-guides/camera-styles-infographic.png`
 
@@ -112,7 +112,7 @@ Create a Xiaohongshu-style viral cooking tutorial image in a 3:4 vertical layout
 Make me an image in 35 mm film style of a diagram showing the knowledge of camera styles, presets, and what to know about them as an aspiring iPhone photographer that wants to pursue their passion. Build it as a rich multi-panel reference board with labeled sections for film looks, digital presets, portrait approaches, street photography styles, color temperature, grain, contrast, flash, framing, and common mistakes. Each camera and preset style should appear in its actual style instead of being rendered uniformly in one style. Make it visually dense, highly educational, beautifully designed, and easy to scan.
 ```
 
-### No. 74 · Chinese endangered-animal infographic
+### No. 75 · Chinese endangered-animal infographic
 
 - Image: `docs/infographics-field-guides/endangered-animal-chinese-infographic.png`
 
@@ -122,3 +122,58 @@ Make me an image in 35 mm film style of a diagram showing the knowledge of camer
 ```text
 Create a visually rich infographic in Chinese about an endangered animal. Start by finding one online, research its habitat, diet, and unique traits. Present information through annotated visuals and structured callouts, not generic sections. Style it like a bold graphic illustration: a detailed, photorealistic central animal as the focal point, supported by diagrams, callouts, and concise text elements. Use clean backgrounds and a mix of photorealism with strong graphic elements (shapes, icons, color blocking) in a layered composition. Make it dense, tactile, and professionally authored.
 ```
+
+### No. 167 · Inside the overthinking department
+
+- Image: `docs/infographics-field-guides/overthinking-departments-26.png`
+- Display derivative: `docs/assets/previews/overthinking-departments-26.webp` (full-resolution lossless WebP; PNG retained).
+
+  <a href="../../../docs/infographics-field-guides/overthinking-departments-26.png"><img src="../../../docs/assets/previews/overthinking-departments-26.webp" alt="Inside the overthinking department" width="420"/></a>
+- Metadata: `gpt-image-2.6-flare` · `1024x1536` · `high` · generation · `2026-11-09` · Author: u/Ohsusannamarie · Source: [original post](https://www.reddit.com/r/ChatGPT/comments/1w0jh1w/i_started_asking_chatgpt_to_create_images_using/)
+- Adaptation: Inspired by the original Inside My Brain and brain-as-an-organisation prompts; all persona details here are fictional. The exact executed prompt below includes our scenario and layout choices.
+
+**Prompt**
+
+```text
+An elaborate illustrated cutaway of a fictional overthinker’s brain shaped like a chaotic six-storey office building. Title: INSIDE MY BRAIN. Each room has its own tiny employees, machines, incident and readable short sign. Top: IDEA DEPARTMENT launches paper airplanes into neighbouring offices. FACT CHECKING uses forklifts to move citation folders. REPLAYING ONE AWKWARD MOMENT has a cinema showing the same handshake. COFFEE POWER PLANT is a hamster-wheel espresso engine. FIVE-MINUTE TASK has construction workers expanding into adjacent rooms. SLEEP OFFICE is locked while employees nap in the corridor. A red deadline alarm is ignored by a committee eating biscuits. Draw absurd connections between these departments with pneumatic tubes, stairs and conveyor belts. Crisp editorial pen illustration with rich muted colour, numerous tiny visual jokes, large legible headings, portrait composition, fully illustrated rather than a chart of empty boxes.
+```
+
+- Visual QA: The labelled departments, citation forklift, awkward-handshake cinema, coffee machinery, sleeping staff and ignored deadline alarm are visible. The floor structure is not an exact six-storey building; this is a satirical cutaway, not a validated floor plan.
+- Run record: [Image 2.6 community samples](../../../docs/image-2.6-samples.md#second-round-six-community-candidates).
+
+### Animation and website variation of No. 167
+
+- Output: `docs/infographics-field-guides/brain-office-loop.gif`; 2.6 Flare reference edit, `512x768`, `medium`, 9 frames × 200 ms, 1.8 s, `2026-11-09`.
+- Input: `docs/infographics-field-guides/overthinking-departments-26.png`. Animation brief and webpage: Curated; original concept credit remains u/Ohsusannamarie above.
+
+  <a href="../../../docs/demos/brain-office.html"><img src="../../../docs/infographics-field-guides/brain-office-loop.gif" alt="Animated overthinking office" width="300"/></a>
+
+**Animation prompt**
+
+```text
+Animate this exact illustrated brain-office cutaway as a short seamless looping GIF. Keep the camera, room layout, all signs and lettering fixed. Use small motions: the hamster turns the coffee wheel, tiny workers move papers along the conveyor, one paper airplane drifts near the roof, the red DEADLINE lamp gently blinks while the committee keeps eating biscuits. Preserve the drawing style and character identities. Most of the image stays still. End in the starting state. Return a single animated scene, not a grid or storyboard. No new text.
+```
+
+```bash
+gpt-image --model gpt-image-2.6-flare -i docs/infographics-field-guides/overthinking-departments-26.png -p "<ANIMATION PROMPT ABOVE>" --format gif --frames 9 --frame-duration 200 --size 512x768 --quality medium -f brain-office.gif
+```
+
+The motion is subtle and small lettering changes between frames. The [interactive website](../../../docs/demos/brain-office.html) adds readable HTML room descriptions, clickable hotspots and a clock-in/out motion toggle. Its layout and controls are code, not generated image content.
+
+### No. 169 · Flat-pack dragon assembly
+
+- Image: `docs/infographics-field-guides/flatpack-dragon-26.png`
+- Display derivative: `docs/assets/previews/flatpack-dragon-26.webp` (full-resolution lossless WebP; PNG retained).
+
+  <a href="../../../docs/infographics-field-guides/flatpack-dragon-26.png"><img src="../../../docs/assets/previews/flatpack-dragon-26.webp" alt="Flat-pack dragon assembly" width="420"/></a>
+- Metadata: `gpt-image-2.6-flare` · `1024x1536` · `high` · generation · `2026-11-09` · Author: u/Mary_ry · Source: [original post](https://www.reddit.com/r/ChatGPT/comments/1pd0qeu/from_nuclear_to_summoning_a_dragon_ais_cursed/)
+- Adaptation: The original asks for furniture-assembly instructions for something that should never have a furniture manual. This adaptation selects a fictional dragon. The exact executed prompt below includes our scenario and layout choices.
+
+**Prompt**
+
+```text
+A deadpan flat-pack furniture assembly instruction sheet for assembling a living dragon, named DRAKON. Six numbered illustrated stages, black technical line art on warm white paper, small mustard-yellow warning boxes. At the top a neat parts inventory: dragon head, two wings, coiled tail, four feet, huge ribbed body, bag of tiny screws, one comically small hex key. Step 1 a cheerful stick person sorts parts. Step 2 two people struggle to align a wing. Step 3 one extra screw remains. Step 4 assembled dragon sneezes a tiny flame onto the instruction page. Step 5 dragon eats the hex key. Step 6 dragon has curled up on the sofa, crushing it, while owner calmly phones support. Tiny alternate wrong-way wing diagram crossed out. Bottom warning reads WARNING: DO NOT FEED AFTER ASSEMBLY. Precise readable diagrams, escalating visual comedy, clean generous gutters, portrait layout. Fictional fantasy assembly only, no realistic dangerous instructions. Do not use a real company logo.
+```
+
+- Visual QA: The parts list, six numbered stages, spare screw, fire sneeze, eaten hex key, broken sofa and warning are readable. The drawing is a fantasy joke, not mechanically meaningful assembly guidance.
+- Run record: [Image 2.6 community samples](../../../docs/image-2.6-samples.md#second-round-six-community-candidates).
